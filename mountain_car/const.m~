@@ -1,0 +1,20 @@
+classdef const
+    properties (Constant)
+        % problem
+        N = 100;        % problem size
+        
+        % states
+        DSTATE = 2;     % state dimension/number of state variables
+        XMIN = -1.2;    % minimum position
+        XMAX = 0.5;     % maximum position
+        VMIN = -0.07;   % minimum speed
+        VMAX = 0.07;    % maximum speed
+        
+        % actions
+        AMIN = -1.0;    % 
+        AMAX = 1.0;
+        
+        % value iteration
+        VTOL = 1e-6;
+    end % properties
+end % classdef
