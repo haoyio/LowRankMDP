@@ -75,7 +75,7 @@ function value_iteration(mdp::MDP, save::Bool=false, verbose::Bool=true)
                 snext = mdp.transition(state, action)
                 vnext = interpolate(mdp.S, V, snext)
                 Qprev = Q[istate, iaction]
-                Q[istate, iaction] = mdp.reward(state) + GAMMA * vnext
+                Q[istate, iaction] = mdp.reward(state, action) + GAMMA * vnext
                 residual += (Q[istate, iaction] - Qprev)^2
             end # for iaction
         end # for istate

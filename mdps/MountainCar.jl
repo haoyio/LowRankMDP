@@ -59,7 +59,7 @@ function clip(val::Float64, minval::Float64, maxval::Float64)
 end # function clip
 
 
-function reward(state::Vector{Float64})
+function reward(state::Vector{Float64}, action::Float64)
     if state[1] == XMAX
         return TERM_REWARD
     else
