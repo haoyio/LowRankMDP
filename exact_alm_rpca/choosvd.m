@@ -34,6 +34,6 @@ else
     if d / n <= 0.38
         y = 1;
     else
-        y = 0
+        y = 0;
     end
 end
