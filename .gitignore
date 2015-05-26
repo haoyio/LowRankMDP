@@ -3,3 +3,16 @@
 *.mat
 *.m~
 *.csv
+*.png
+
+# Latex output files #
+######################
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.fdb_latexmk
+*.toc
+*.bbl
+*.blg

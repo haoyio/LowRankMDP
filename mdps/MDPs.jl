@@ -2,13 +2,14 @@ module MDPs
 
 using GridInterpolations
 
-export MDP, Policy, policy!, value_iteration, get_belief, RectangleGrid
+export MDP, Policy, policy!, value_iteration, get_belief, dimensions, RectangleGrid
 
 
 # value iteration
 const VTOL = 1e-6
 const MAXITER = 500
 const GAMMA = 0.95
+const SAVELOC = "../data/qvalue.csv"
 
 
 type MDP
@@ -50,12 +51,12 @@ function policy!(policy::Policy, belief::SparseMatrixCSC{Float64, Int64})
 end # function policy!
 
 
-function saveq(Q::Matrix{Float64})
-    writecsv(Q_CSV, Q)
+function saveq(Q::Matrix{Float64}, saveloc::ASCIIString)
+    writecsv(saveloc, Q)
 end # function saveq
 
 
-function value_iteration(mdp::MDP, save::Bool=false, verbose::Bool=true)
+function value_iteration(mdp::MDP, save::Bool=false, saveloc::ASCIIString=SAVE_LOC, verbose::Bool=true)
     nstate = length(mdp.S)
     naction = length(mdp.A)
     V = zeros(nstate)
@@ -102,7 +103,7 @@ function value_iteration(mdp::MDP, save::Bool=false, verbose::Bool=true)
     @printf("Value iteration took %d iterations and %.2e sec\n", iter, cputime)
 
     if save
-        saveq(Q)
+        saveq(Q, saveloc)
     end # if
 
     return Policy(Q, mdp.A)
