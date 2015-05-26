@@ -21,7 +21,7 @@ lrm/
     LowRankModel.jl
     LowRankModeling.ipynb
     choosvd.m
-    exact\_alm\_rpca.m
+    exact_alm_rpca.m
 
 mdps/
     InvertedPendulum.ipynb
