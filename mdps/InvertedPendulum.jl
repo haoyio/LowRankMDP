@@ -70,7 +70,7 @@ end # function transition
 
 
 function reward(state::Vector{Float64}, action::Float64)
-    return exp(K * (cos(state[1]) - 1)) - R * action^2
+    return exp(K * (cos(state[1]) - 1)) - R * action^2 - 1
 end # function reward
 
 
