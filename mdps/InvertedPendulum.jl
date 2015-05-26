@@ -4,6 +4,7 @@ using MDPs, PGFPlots
 
 export state_space, action_space, transition, reward, simulation,
        viz_policy, viz_trajectory
+export PMIN, PMAX, VMIN, VMAX
 
 
 # mdp
@@ -12,8 +13,8 @@ const MV = 50
 const N = 1000
 
 # state
-const PMIN = -pi
-const PMAX = pi
+const PMIN = float(-pi)
+const PMAX = float(pi)
 const VMIN = -10.0
 const VMAX = 10.0
 

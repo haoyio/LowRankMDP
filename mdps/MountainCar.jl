@@ -4,6 +4,7 @@ using MDPs, PGFPlots
 
 export state_space, action_space, transition, reward, simulation,
        viz_policy, viz_trajectory
+export XMIN, XMAX, VMIN, VMAX
 
 
 # mdp

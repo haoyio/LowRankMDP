@@ -22,10 +22,11 @@ function [A_hat, E_hat, iter] = exact_alm_rpca(D, lambda, tol, maxIter)
 %   \mu = \rho * \mu;
 % end
 %
-% Minming Chen, October 2009. Questions? v-minmch@microsoft.com ; 
+% Minming Chen, October 2009. Questions? v-minmch@microsoft.com; 
 % Arvind Ganesh (abalasu2@illinois.edu)
 %
-% Copyright: Perception and Decision Laboratory, University of Illinois, Urbana-Champaign
+% Copyright: Perception and Decision Laboratory, University of Illinois, 
+%            Urbana-Champaign
 %            Microsoft Research Asia, Beijing
 
 addpath PROPACK;
