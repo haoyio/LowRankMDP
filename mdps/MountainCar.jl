@@ -91,7 +91,7 @@ function viz_policy(mdp::MDP, policy::Policy)
     Axis([Plots.Image(getmap, (XMIN, XMAX), (VMIN, VMAX),
                       xbins = 250, ybins = 250,
                       colormap = ColorMaps.Named("RdBu"))],
-          width="9cm", height="8cm",
+          width="12cm", height="12cm",
           xlabel="position", ylabel="speed",
           title="Policy heatmap")
 end # function viz_policy
@@ -100,11 +100,11 @@ end # function viz_policy
 function viz_trajectory(trajectory::Matrix{Float64}, actions::Vector{Float64})
     g = GroupPlot(2, 1, groupStyle="horizontal sep=1.5cm")
     push!(g, Axis([Plots.Linear(trajectory[:, 1])],
-                  width="9cm", height="8cm",
+                  width="10cm", height="10cm",
                   xlabel="time", ylabel="position",
                   title="position over time"))
     push!(g, Axis([Plots.Linear(actions)],
-                  width="9cm", height="8cm",
+                  width="10cm", height="10cm",
                   xlabel="time", ylabel="acceleration",
                   title="acceleration over time"))
     g
