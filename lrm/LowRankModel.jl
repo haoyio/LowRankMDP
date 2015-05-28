@@ -55,14 +55,14 @@ function viz_policies(mdp::MDP, p1::Policy, p2::Policy, minx::Float64,
                     xbins=250, ybins=250,
                     colormap=ColorMaps.Named("RdBu"),
                     colorbar=false)
-        ], width="8cm", height="8cm", title="Original policy",
+        ], width="10cm", height="10cm", title="Original policy",
            xlabel=xlabels, ylabel=ylabels))
     push!(g, Axis([
         Plots.Image(getmap2, (minx + EPS, maxx - EPS), 
                     (miny + EPS, maxy - EPS),
                     xbins=250, ybins=250,
                     colormap=ColorMaps.Named("RdBu"))
-        ], width="8cm", height="8cm", title="Low-rank + sparse policy",
+        ], width="10cm", height="10cm", title="Low-rank + sparse policy",
            xlabel=xlabels, ylabel=ylabels))
     if saveplot
       PGFPlots.save(string("policies.tex"), g)
@@ -76,19 +76,19 @@ function viz_trajectories(traj1::Matrix{Float64}, act1::Vector{Float64},
                           saveplot::Bool=false)
     g = GroupPlot(2, 2, groupStyle="horizontal sep=2cm, vertical sep=2cm")
     push!(g, Axis([Plots.Linear(traj1[:, 1])],
-                  width="8cm", height="8cm",
+                  width="12cm", height="12cm",
                   xlabel="time", ylabel="angle (deg)",
                   title="Original policy trajectory"))
     push!(g, Axis([Plots.Linear(act1)],
-                  width="8cm", height="8cm",
+                  width="12cm", height="12cm",
                   xlabel="time", ylabel="input",
                   title="Original policy input"))
     push!(g, Axis([Plots.Linear(traj2[:, 1])],
-                  width="8cm", height="8cm",
+                  width="12cm", height="12cm",
                   xlabel="time", ylabel="angle (deg)",
                   title="Low-rank + sparse policy trajectory"))
     push!(g, Axis([Plots.Linear(act2)],
-                  width="8cm", height="8cm",
+                  width="12cm", height="12cm",
                   xlabel="time", ylabel="input",
                   title="Low-rank + sparse policy input"))
     if saveplot

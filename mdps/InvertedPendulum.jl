@@ -102,7 +102,7 @@ function viz_policy(mdp::MDP, policy::Policy)
                       (VMIN + EPS, VMAX - EPS),
                       xbins = 250, ybins = 250,
                       colormap = ColorMaps.Named("RdBu"))],
-          width="12cm", height="12cm",
+          width="14cm", height="14cm",
           xlabel="angle", ylabel="angular speed",
           title="Policy heatmap")
 end # function viz_policy
@@ -111,11 +111,11 @@ end # function viz_policy
 function viz_trajectory(trajectory::Matrix{Float64}, actions::Vector{Float64})
     g = GroupPlot(2, 1, groupStyle="horizontal sep=1.5cm")
     push!(g, Axis([Plots.Linear(rad2deg(trajectory[:, 1]))],
-                  width="10cm", height="10cm",
+                  width="12cm", height="12cm",
                   xlabel="time", ylabel="angle (deg)",
                   title="angular position over time"))
     push!(g, Axis([Plots.Linear(actions)],
-                  width="10cm", height="10cm",
+                  width="12cm", height="12cm",
                   xlabel="time", ylabel="input",
                   title="control input over time"))
     g
