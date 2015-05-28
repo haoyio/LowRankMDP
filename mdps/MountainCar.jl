@@ -2,7 +2,7 @@ module MountainCar
 
 using MDPs, PGFPlots
 
-export state_space, action_space, transition, reward, simulation,
+export state_space, action_space, transition, reward, simulate,
        viz_policy, viz_trajectory
 export XMIN, XMAX, VMIN, VMAX
 
@@ -27,7 +27,7 @@ const TERM_REWARD = 10
 const NONTERM_REWARD = -1
 
 # test
-const T = 200
+const T = 500
 
 
 function state_space(mx::Int64=MX, mv::Int64=MV)
@@ -65,7 +65,7 @@ function reward(state::Vector{Float64}, action::Float64)
 end # function reward
 
 
-function simulation(mdp::MDP, policy::Policy, state::Vector{Float64})
+function simulate(mdp::MDP, policy::Policy, state::Vector{Float64})
     trajectory = zeros(T, dimensions(mdp.S))
     actions = zeros(T)
     for t = 1:T
@@ -80,7 +80,7 @@ function simulation(mdp::MDP, policy::Policy, state::Vector{Float64})
         actions[t] = action
     end # for t
     return trajectory, actions
-end # function simulation
+end # function simulate
 
 
 function viz_policy(mdp::MDP, policy::Policy)
