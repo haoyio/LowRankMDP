@@ -1,6 +1,6 @@
 ## LowRankMDP
 
-This directory contains the supplement code for the paper titled "Value Function Approximation via Low-Rank Models" by Hao Yi Ong.
+This directory contains the supplement code for the paper titled "Value Function Approximation via Low-Rank Models" by Hao Yi Ong. See [here](http://web.stanford.edu/~haoyi/projects/value-function-approx-low-rank-model.pdf) for the paper.
 
 Here you will find implementations of the following:
 * Classic mountain car and inverted pendulum MDPs and solutions obtained by value iteration
